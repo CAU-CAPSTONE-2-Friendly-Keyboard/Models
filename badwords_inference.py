@@ -29,10 +29,11 @@ explainer = LimeTextExplainer(class_names=['bad','ok'])
 test_text = "" # 테스트할 텍스트 입력
 
 if classifier(test_text)[0]['label'] == 'bad_sen':
-    print('비속어 있음')
     exp = explainer.explain_instance(test_text, mk_predlist,top_labels=1)
 
     badword = exp.as_list(label=0)[0][0]
+    print('비속어 있음')
+    print(badword)
 
 else:
     print('비속어 없음')
