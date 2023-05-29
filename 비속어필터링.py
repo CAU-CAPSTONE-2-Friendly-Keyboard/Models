@@ -7,8 +7,6 @@ def get_data(filename):
     data.sort(key= lambda x : len(x))
     return data
 
-ko_data = get_data("KO")
-
 def bad2star(line):
     used_badword = []
     for badword in ko_data:
@@ -17,6 +15,7 @@ def bad2star(line):
             used_badword.append(badword)
     return (line,used_badword)
 
+ko_data = get_data("KO")
 result, used_badword = bad2star('이제 그만 닥쳐봐')
 print(result)
 print(used_badword)
